@@ -14,6 +14,7 @@
 Todos.Task = SC.Record.extend(
 /** @scope Todos.Task.prototype */ {
 
-  // TODO: Add your own code here.
+  isDone: SC.Record.attr(Boolean),
+  description: SC.Record.attr(String)
 
 }) ;
