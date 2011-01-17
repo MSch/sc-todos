@@ -4,13 +4,17 @@
 // ==========================================================================
 /*globals Todos */
 
+Todos.taskController = SC.ObjectController.create({
+  contentBinding: SC.Binding.single('Todos.tasksArrayController.selection'),
+});
+
 /** @class
 
   (Document Your Controller Here)
 
   @extends SC.ArrayController
 */
-Todos.tasksController = SC.ArrayController.create(
+Todos.tasksArrayController = SC.ArrayController.create(
   SC.CollectionViewDelegate,
 /** @scope Todos.tasksController.prototype */ {
 

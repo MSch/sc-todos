@@ -28,7 +28,7 @@ Todos.mainPage = SC.Page.design({
       addButton: SC.ButtonView.design({
         layout: { centerY: 0, height: 24, right: 12, width: 100 },
         title:  "Add Task",
-        target: "Todos.tasksController", action: "addTask"
+        target: "Todos.tasksArrayController", action: "addTask"
       })
     }),
 
@@ -45,15 +45,15 @@ Todos.mainPage = SC.Page.design({
         backgroundColor: 'white',
         //Here is the original list view, which is bound to the tasksController
         contentView: SC.ListView.design({
-          contentBinding: 'Todos.tasksController.arrangedObjects',
-          selectionBinding: 'Todos.tasksController.selection',
+          contentBinding: 'Todos.tasksArrayController.arrangedObjects',
+          selectionBinding: 'Todos.tasksArrayController.selection',
           contentValueKey: "description",
           contentCheckboxKey: "isDone",
           rowHeight: 21,
           canEditContent: YES,
           canDeleteContent: YES,
 
-          target: "Todos.tasksController", action: "toggleDone"
+          target: "Todos.tasksArrayController", action: "toggleDone"
         })
       }),
       topLeftMinThickness: 150,
@@ -64,7 +64,7 @@ Todos.mainPage = SC.Page.design({
       //This view shows up on the right. It is a placeholder, later we will use a formview.
       bottomRightView: SC.LabelView.design({
         textAlign: SC.ALIGN_CENTER,
-        valueBinding: "Todos.tasksController.summary"
+        valueBinding: "Todos.taskController.description"
       }),
     }),
 
@@ -76,7 +76,7 @@ Todos.mainPage = SC.Page.design({
       summaryView: SC.LabelView.design({
         layout: { centerY: 0, height: 18, left: 20, right: 20 },
         textAlign: SC.ALIGN_CENTER,
-        valueBinding: "Todos.tasksController.summary"
+        valueBinding: "Todos.tasksArrayController.summary"
       })
     })
   })
