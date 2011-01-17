@@ -21,3 +21,12 @@ Todos.Task.FIXTURES = [
     "isDone": false }
 
 ];
+
+(function() {
+  for(var i = 4; i < 50; i++) {
+    var task =  { "guid": "task-" + i,
+    "description": "Task " + i,
+    "isDone": false };
+    Todos.Task.FIXTURES[Todos.Task.FIXTURES.length] = task;
+  }
+}());
